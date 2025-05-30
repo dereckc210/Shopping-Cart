@@ -1,6 +1,6 @@
-const cart = document.getElementById("cart-section");
+const cart = document.getElementById("cart");
 
-const addButtons = document.querySelectorAll("cart");
+const addButtons = document.querySelectorAll("#items-section button");
 
 const removeButton = document.getElementById("remove-btn");
 
@@ -12,6 +12,14 @@ addButtons.forEach(button => {
     option.textContent = itemName;
     option.value = itemName;
 
-    cart.____________________;
+    cart.appendChild(option);
+  });
+});
+
+removeButton.addEventListener("click", () => {
+  const selected = Array.from(cart.selectedOptions);
+
+  selected.forEach(option => {
+    cart.removeChild(option);
   });
 });
